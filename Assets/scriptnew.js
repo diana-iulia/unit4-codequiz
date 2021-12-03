@@ -36,31 +36,31 @@ var questions = [
     correct: 0,
   },
   
-  {question: "",
+  {question: "How many stars are on New Zealand's flag?",
   choiceOptions: [
-    "",
-    "",
-    "",
-    ""],
-    correct: "",
+    "2",
+    "4",
+    "40",
+    "51"],
+    correct: 1,
   },
   
-  {question: "",
+  {question: "How many canine teeth does an adult human have",
   choiceOptions: [
-    "",
-    "",
-    "",
-    ""],
-    correct: "",
+    "2",
+    "4",
+    "6",
+    "10"],
+    correct: 1,
   },
   
-  {question: "",
+  {question: "Captain Nemo is a character in which book?",
   choiceOptions: [
-    "",
-    "",
-    "",
-    ""],
-    correct: "",
+    "Finding Nemo",
+    "20,000 Leagues Under the Sea",
+    "La Sirenita",
+    "Daughters of the Sea"],
+    correct: 1,
   },
   
   
@@ -93,6 +93,7 @@ box.setAttribute("style", "margin:5%; padding: 1em; font-family: Optima, sans-se
 
 //grab timer div from html and label it timerEl
 var timerEl = document.querySelector(".timer");
+//document.getElementsByClassName
 //create empty timer and secondsLeft 
 var timer;
 var secondsLeft;
@@ -137,13 +138,22 @@ function startGame() {
 
 // dynamically displays questions until quiz is completed or timer runs out
 function nextQuestion() { 
-    //TODO: if at length of question array, end game 
-    //empty box at the start 
+    // //TODO: if at length of question array, end game 
+    // if (i > questions[index].choiceOptions.length) {
+    //   winGame();
+    // } else if (timer === 0) {
+    //   loseGame();
+    // }
+
+    //empty box at the start of quiz and at the beginning of each new question
     box.innerHTML= "";
-    //create question var (h2) and get it to populate 
+
+    //create question var (h2), add text content, and append to box 
     var question = document.createElement("h2");
     box.appendChild(question);
     question.textContent = questions[index].question;
+
+    //for loop to create buttons = questions[index].choiceOptions.length
     for(var i=0; i<questions[index].choiceOptions.length; i++) {
       choices = document.createElement("button")
       choices.textContent = questions[index].choiceOptions[i];
@@ -171,6 +181,7 @@ function ifCorrect(event) {
 }
 // The winGame function is called when the win condition is met
 function winGame() {
+    isWin = true;
     box.textContent = "Congratulations!! You did it!! WOW!";
     // winCounter++
     // setWins()
