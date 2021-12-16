@@ -1,0 +1,15 @@
+.scoreStyle {
+    font-size: 3em;
+    text-align: center;
+    
+}
+.timer {
+    float:right;
+}
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
+}

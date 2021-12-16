@@ -1,6 +1,6 @@
 # what does my application need to function
 
-- DYNAMIC* html and css
+- DYNAMIC* html and css 
 - a start button 
 - timer 
 - sequence of questions + if true/false 
